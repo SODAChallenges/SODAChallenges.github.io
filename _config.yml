@@ -85,3 +85,5 @@ exclude:
   - webpack.config.js
   - README.md
   - LICENSE
+
+theme: jekyll-theme-cayman
