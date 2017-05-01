@@ -18,11 +18,21 @@ layout: default
         <a href="?view=edit" class="pull-right btn btn-default admin-only">Edit</a>
       </h1>
       <p>{{ page.description }}</p>
-      <div data-component="datasets-list" data-organization="{{ page.title | slugify }}">
-        <h3 class="datasets-count" data-hook="datasets-count"></h3>
-        <input type="text" data-hook="search-query" placeholder="Search..." class="form-control">
-        <div data-hook="datasets-items"></div>
-      </div>
+      
+      <h2>解决城市问题</h2>
+      <ul>
+        <li><a href="{{ site.baseurl }}/challenges/城市交通事故/" property='dcat:accessURL'><span property="dct:title">数据能用来降低城市交通事故率吗?</span></a></li>
+        <li><a href="{{ site.baseurl }}/challenges/城市治安防控/" property='dcat:accessURL'><span property="dct:title">如何利用数据提高城市治安防控水平？</span></a></li>
+        <li><a href="{{ site.baseurl }}/challenges/数据治理环境/" property='dcat:accessURL'><span property="dct:title">透过数据能知环境，但是否能治理环境？</span></a></li>
+      </ul>
+
+      <h2>数据基础</h2>
+      <ul>
+        <li><a href="{{ site.baseurl }}/datasets/上海公安-犯罪统计数据/" property='dcat:accessURL'><span property="dct:title">上海公安-犯罪统计数据</span></a></li>
+        <li><a href="{{ site.baseurl }}/datasets/上海公安-犯罪统计数据/" property='dcat:accessURL'><span property="dct:title">上海公安-犯罪统计数据</span></a></li>
+        <li><a href="{{ site.baseurl }}/datasets/上海公安-道路事故数据/" property='dcat:accessURL'><span property="dct:title">上海公安-道路事故数据</span></a></li>
+      </ul>
+
     </div>
   </div>
 

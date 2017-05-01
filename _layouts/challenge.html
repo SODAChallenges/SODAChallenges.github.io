@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% include breadcrumbs.html parent="Challenges" %}
+{% include breadcrumbs.html parent="Organizations" %}
 
 <div data-component="view-switcher">
   <div class="row" data-hook="view" data-view="display">
@@ -18,11 +18,21 @@ layout: default
         <a href="?view=edit" class="pull-right btn btn-default admin-only">Edit</a>
       </h1>
       <p>{{ page.description }}</p>
-      <div data-component="datasets-list" data-organization="{{ page.title | slugify }}">
-        <h3 class="datasets-count" data-hook="datasets-count"></h3>
-        <input type="text" data-hook="search-query" placeholder="Search..." class="form-control">
-        <div data-hook="datasets-items"></div>
-      </div>
+
+      <h2>相关数据</h2>
+      <ul>
+        <li><a href="{{ site.baseurl }}/datasets/上海公安-犯罪统计数据/" property='dcat:accessURL'><span property="dct:title">上海公安-犯罪统计数据</span></a></li>
+        <li><a href="{{ site.baseurl }}/datasets/上海公安-犯罪统计数据/" property='dcat:accessURL'><span property="dct:title">上海公安-犯罪统计数据</span></a></li>
+        <li><a href="{{ site.baseurl }}/datasets/上海公安-道路事故数据/" property='dcat:accessURL'><span property="dct:title">上海公安-道路事故数据</span></a></li>
+      </ul>
+
+      <h2>有效解决方案</h2>
+      <ul>
+        <li><a href="{{ site.baseurl }}/projects/事故定责app/" property='dcat:accessURL'><span property="dct:title">事故定责app</span></a></li>
+        <li><a href="{{ site.baseurl }}/projects/危险夜行app/" property='dcat:accessURL'><span property="dct:title">危险夜行app</span></a></li>
+        <li><a href="{{ site.baseurl }}/projects/安全你我app/" property='dcat:accessURL'><span property="dct:title">安全你我app</span></a></li>
+      </ul>
+
     </div>
   </div>
 
