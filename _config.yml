@@ -19,6 +19,8 @@ navigation:
     url: /challenges/
   - title: 比赛数据
     url: /datasets/
+  - title: 解决方案
+    url: /projects/
   - title: 组织单位
     url: /organizations/
 
@@ -27,6 +29,12 @@ collections:
   datasets:
     output: true
     permalink: /datasets/:path/
+  challenges:
+    output: true
+    permalink: /challenges/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
   organizations:
     output: true
     permalink: /organizations/:path/
