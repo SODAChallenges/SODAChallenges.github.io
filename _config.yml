@@ -50,6 +50,16 @@ defaults:
       organization: N/A
   - scope:
       path: ""
+      type: challenges
+    values:
+      layout: challenge
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
       type: organizations
     values:
       layout: organization

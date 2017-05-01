@@ -11,7 +11,7 @@ permalink: /projects/
   <div class="media">
     <div class="media-left">
       {% if project.logo and project.logo != empty %}
-        <a href="{{ site.baseurl }}{{ organization.url }}" class="organization-thumbnail">
+        <a href="{{ site.baseurl }}{{ project.url }}" class="organization-thumbnail">
           <img class="media-object" src="{{ project.logo }}" alt="{{ project.title }}">
         </a>
       {% endif %}
