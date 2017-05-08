@@ -1,27 +1,58 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="jumbotron">
-  <h1>{{ site.greeting }}</h1>
-  <p>
-    {{ site.description }}
-  </p>
-  <p><a class="btn btn-primary btn-lg" href="{{ site.baseurl }}/datasets" role="button">Start browsing</a></p>
-</div>
+<head>
 
-<h3>Browse by Category</h3>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SODA">
+    <meta name="author" content="JW-Creatives">
 
-<div class="homepage-categories">
-{% for category in site.data.categories %}
-  {% if category.featured == true %}
-    {% capture logo_alt %}{{ category.name }}{% if category.logo_credit and category.logo_credit != empty %} logo by {{ category.logo_credit }}{% endif %}{% endcapture %}
-    <a href="{{ site.baseurl }}/datasets/?category={{ category.name | slugify }}" class="thumbnail" title="{{ logo_alt }}">
-      {% if category.logo and category.logo != empty %}
-        <img src="{{ site.baseurl }}{{ category.logo }}" alt="{{ logo_alt }}">
-      {% endif %}
-      {{ category.name }}
-    </a>
-  {% endif %}
-{% endfor %}
-</div>
+    <title>SODA</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/static/favicon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body data-spy="scroll" data-target=".navbar">
+<!-- Full Width Image Header -->
+<header class="header-image" data-vide-bg="video/video">
+    <ul id="scene">
+        <li class="layer" data-depth="0.0" style="z-index: 9;">
+            <div class="headline">
+                <div class="container">
+                    <div id="header-title">
+                        <img src="img/17logo.png" class="img-responsive">
+
+                      
+                    </div>
+                   
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+
+
+</header>
+
+
+<!-- jQuery -->
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.jQuery || document.write('<script type="text/javascript" src="js/jquery-1.11.3.min.js"><\/script>')
+    </script>
+    <script type="text/javascript" src="scripts/jquery.vide.js"></script>
+</body>
+</html>
