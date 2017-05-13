@@ -1231,8 +1231,8 @@ form {
 	list-style:none;
 	display:inline-block;
 	/*border:1px solid #dadada*/;
-	min-width:187px;
-	cursor:pointer
+	min-width:50px;
+	cursor:pointer;
 }
 .btn-icon-pg ul li:hover i {
 	transition:0.3s;

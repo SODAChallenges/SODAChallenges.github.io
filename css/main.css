@@ -118,3 +118,9 @@ dataset {
 .text-margin {
   margin-bottom: 2px; margin-left: 15px;
 }
+
+.institution-logo {
+  padding: 2px;
+  margin-bottom: 10px;
+
+}
