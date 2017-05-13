@@ -1227,10 +1227,10 @@ form {
 }
 .btn-icon-pg ul li {
 	margin:5px;
-	padding:5px;
+	/*padding:5px;*/
 	list-style:none;
 	display:inline-block;
-	border:1px solid #dadada;
+	/*border:1px solid #dadada*/;
 	min-width:187px;
 	cursor:pointer
 }
