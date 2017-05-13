@@ -1,12 +1,13 @@
+/*
 * {
 	outline:none !important;
 	-moz-outline: none !important;
 }
-html, body{height:100%}
+html, body{height:100%}*/
 /* Main */
 
 /*Bootstrap-overlay*/
-
+/*
 body {
 	overflow-x: hidden;
 	margin-top: -10px; font-family: 'Open Sans', sans-serif; font-size:12px; color:#666;
@@ -14,7 +15,7 @@ body {
 a{color:#666;}
 a:hover, a:focus {
 	text-decoration: none; color:#28b779;
-}
+}*/
 .dropdown-menu .divider{ margin:4px 0px;}
 .dropdown-menu{ min-width:180px;}
 .dropdown-menu > li > a{ padding:3px 10px; color:#666; font-size:12px;}
