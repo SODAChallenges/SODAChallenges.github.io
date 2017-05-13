@@ -98,3 +98,23 @@ dataset {
 .theme-gallery .panel-primary {
   border-width: 5px;
 }
+
+.label-bonus {
+  padding: 0px 3px; 
+  border-radius: 2px; 
+  background-color: #ffb848;
+}
+
+.label-number {
+  padding: 0px 3px; 
+  border-radius: 2px; 
+  background-color: #3a87ad;
+}
+
+.box-margin {
+  margin-left: 5px; margin-right: 20px;
+}
+
+.text-margin {
+  margin-bottom: 2px; margin-left: 15px;
+}
