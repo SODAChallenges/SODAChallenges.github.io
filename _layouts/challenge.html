@@ -5,17 +5,28 @@ layout: default
 
 <div data-component="view-switcher">
   <div class="row" data-hook="view" data-view="display">
-    {% if page.logo and page.logo != empty %}
     <div class="col-sm-3">
-      <a href="{{ page.logo }}" class="thumbnail"><img src="{{ page.logo }}" alt="{{ page.title }} logo"></a>
+      <div class="widget-box" style="margin-left: 5px; margin-right: 20px;">
+          <div class="widget-title"> <span class="icon"> <i class="icon-time"></i> </span>
+            <h5> 关键时间节点</h5>
+          </div>
+          <div class="widget-content">
+            <h6 style="margin-bottom: 2px; margin-left: 15px;">
+              <span class="icon"> <i class="icon-arrow-right"></i> 创意提交  <code>7月15日</code>
+            </h6>
+            <h6 style="margin-bottom: 2px; margin-left: 15px;">
+              <span class="icon"> <i class="icon-arrow-right"></i> 原型提交  <code>9月15日</code>
+            </h6>
+            <h6 style="margin-bottom: 2px; margin-left: 15px;">
+              <span class="icon"> <i class="icon-arrow-right"></i> 提名揭晓  <code>10月9日</code>
+            </h6>
+          </div>
+        </div>
     </div>
     <div class="col-sm-9">
-    {% else %}
-    <div class="col-sm-12">
-    {% endif %}
       <h2>
         {{ page.name }}
-        <a href="?view=edit" class="pull-right btn btn-default admin-only">Edit</a>
+        <!--a href="?view=edit" class="pull-right btn btn-default admin-only">Edit</a-->
       </h2>
       </br>
 
