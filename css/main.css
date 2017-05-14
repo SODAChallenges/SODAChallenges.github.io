@@ -122,5 +122,22 @@ dataset {
 .institution-logo {
   padding: 2px;
   margin-bottom: 10px;
+}
 
+.challenges-title {
+  color: #0e72b5;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-style: normal;
+  font-size: 41.6px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.challenges-sub-title {
+  color: #474747;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-style: normal;
+  font-size: 20.8px;
+  font-weight: bold;
+  text-align: left;
 }
