@@ -141,3 +141,8 @@ dataset {
   font-weight: bold;
   text-align: left;
 }
+
+.content-padding {
+  padding: 7px 15px;
+  max-width: 700px;
+}
