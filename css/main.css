@@ -142,6 +142,14 @@ dataset {
   text-align: left;
 }
 
+.challenges-mentor-intro {
+  font-family: "Replica-Regular-S";
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  max-width: 180px;
+}
+
 .content-padding {
   padding: 7px 15px;
   max-width: 700px;
