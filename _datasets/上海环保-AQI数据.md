@@ -14,6 +14,8 @@ resources:
     url: 'https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/Air_Monitoring_Stations/FeatureServer/0/query'
     format: api
 license: 'https://www.baidu.com'
+challenge_category: 
+  - 健康医疗
 category:
   - Environment
 maintainer: Tim Wisniewski

@@ -14,6 +14,8 @@ resources:
     url: 'https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/Air_Monitoring_Stations/FeatureServer/0/query'
     format: api
 license: 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/'
+challenge_category: 
+  - 未来商业
 category:
   - Education
 maintainer: Tim Wisniewski
