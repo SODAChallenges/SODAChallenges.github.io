@@ -25,7 +25,7 @@ dataset_fields:
     label: Challenge Category
     form_template: form/category.html
     display_template: display/category.html
-    datajson: category
+    datajson: challenge_category
   - field_name: maintainer
     label: Maintainer
     datajson: contactPoint.fn
