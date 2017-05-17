@@ -7,51 +7,25 @@ permalink: /challenges/
 
 <a href="{{ site.baseurl }}/add-organization/" class="btn btn-default pull-right admin-only" data-hook="add-organization-btn"><i class="fa fa-plus"></i> Add Organization</a>
 
-<!--
-绿
-up: 9DBC4C
-down: 529C52
-
-蓝
-up: 53AADB
-down: 2C77B6
-
-橙
-up: EFAE59
-down: DC6746
-
-红
-up: CC4365
-down: 9C3C5E
 
 
--->
-<div class="challenge-box">
-  <a href="#" style="text-decoration: none;">
-  <div class="challenge-box-top-half green-development-top-half">
-    <h5 class="challenge-card-title">如何推动企业更诚信、有社会责任的运作？</h5>
-  </div>
-  <div class="challenge-box-bot-half green-development-bot-half">
-    <h6 class="challenge-card-description">¥10,0000奖金</h6>
-    <p class="challenge-card-description">期望更多学者与实践家们参与企业社会责任的研究与实践， 进而使企业在...</p>
-  </div>
-  </a>
+<div class="media">
+  <ul>
+  {% for challenge in site.challenges %}
+  <li>
+    <div class="challenge-box">
+      <a href="{{ site.baseurl }}{{ challenge.url }}" style="text-decoration: none;">
+        <div class="challenge-box-top-half {{ challenge.title | append:'-top-half' }} ">
+          <h5 class="challenge-card-title">如何推动企业更诚信、有社会责任的运作？</h5>
+        </div>
+        <div class="challenge-box-bot-half {{ challenge.title | append:'-bot-half' }}">
+          <h6 class="challenge-card-description">{{ challenge.prize | append: " 奖金" | prepend: "¥"}}</h6>
+          <p class="challenge-card-description">{{ challenge.description | truncate: 20 }}</p>
+        </div>
+      </a>
+    </div>
+  </li>
+  {% endfor %}
+  </ul>
 </div>
 
-{% for challenge in site.challenges %}
-  {% assign dataset_count = site.datasets | where:"challenge", challenge.title | size %}
-  <div class="media">
-    <div class="media-left">
-      {% if challenge.logo and challenge.logo != empty %}
-        <a href="{{ site.baseurl }}{{ organization.url }}" class="organization-thumbnail">
-          <img class="media-object" src="{{ challenge.logo }}" alt="{{ challenge.title }}">
-        </a>
-      {% endif %}
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><a href="{{ site.baseurl }}{{ challenge.url }}">{{ challenge.name }}</a></h4>
-      <p>{{ organization.description }}</p>
-      <p><a href="{{ site.baseurl }}/datasets/?challenge={{ challenge.title | slugify }}">{{ dataset_count }} datasets</a></p>
-    </div>
-  </div>
-{% endfor %}
