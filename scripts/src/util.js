@@ -36,6 +36,9 @@ export function createDatasetFilters (filters) {
     if (filters.organization) {
       conditions.push(dataset.organization && slugify(dataset.organization) === filters.organization)
     }
+    if (filters.challenge_category) {
+      conditions.push(dataset.challenge_category && slugify(dataset.challenge_category).indexOf(filters.challenge_category) !== -1)
+    }
     if (filters.category) {
       conditions.push(dataset.category && slugify(dataset.category).indexOf(filters.category) !== -1)
     }

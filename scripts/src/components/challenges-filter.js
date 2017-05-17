@@ -15,25 +15,25 @@ export default class {
   // Given an array of datasets, returns an array of their categories with counts
   _categoriesWithCount (datasets, params) {
     return chain(datasets)
-      .filter('category')
+      .filter('challenge_category')
       .flatMap(function (value, index, collection) {
         // Explode objects where category is an array into one object per category
-        if (typeof value.category === 'string') return value
+        if (typeof value.challenge_category === 'string') return value
         const duplicates = []
-        value.category.forEach(function (category) {
-          duplicates.push(defaults({category: category}, value))
+        value.challenge_category.forEach(function (challenge_category) {
+          duplicates.push(defaults({challenge_category: challenge_category}, value))
         })
         return duplicates
       })
-      .groupBy('category')
-      .map(function (datasetsInCat, category) {
-        const filters = createDatasetFilters(pick(params, ['organization','challenge_category']))
+      .groupBy('challenge_category')
+      .map(function (datasetsInCat, challenge_category) {
+        const filters = createDatasetFilters(pick(params, ['organization','category']))
         const filteredDatasets = filter(datasetsInCat, filters)
-        const categorySlug = slugify(category)
-        const selected = params.category && params.category === categorySlug
-        const itemParams = selected ? omit(params, 'category') : defaults({category: categorySlug}, params)
+        const challenge_categorySlug = slugify(challenge_category)
+        const selected = params.challenge_category && params.challenge_category === challenge_categorySlug
+        const itemParams = selected ? omit(params, 'challenge_category') : defaults({challenge_category: challenge_categorySlug}, params)
         return {
-          title: category,
+          title: challenge_category,
           url: '?' + $.param(itemParams),
           count: filteredDatasets.length,
           unfilteredCount: datasetsInCat.length,

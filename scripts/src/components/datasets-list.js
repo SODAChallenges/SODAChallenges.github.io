@@ -24,8 +24,8 @@ export default class {
     }
 
     // Filter datasets and render in items container
-    const paramFilters = pick(opts.params, ['organization', 'category'])
-    const attributeFilters = pick(opts.el.data(), ['organization', 'category'])
+    const paramFilters = pick(opts.params, ['organization', 'category','challenge_category'])
+    const attributeFilters = pick(opts.el.data(), ['organization', 'category','challenge_category'])
     const filters = createDatasetFilters(defaults(paramFilters, attributeFilters))
     const filteredDatasets = filter(opts.datasets, filters)
     const datasetsMarkup = filteredDatasets.map(TmplDatasetItem)

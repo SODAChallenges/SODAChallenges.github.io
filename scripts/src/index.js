@@ -7,6 +7,7 @@ import {omit} from 'lodash'
 import UserModel from './models/user'
 import Navigation from './components/navigation'
 import DatasetsList from './components/datasets-list'
+import ChallengesFilter from './components/challenges-filter'
 import CategoriesFilter from './components/categories-filter'
 import OrganizationsFilter from './components/organizations-filter'
 import Form from './components/form'
@@ -58,6 +59,7 @@ const components = [
   {tag: 'view-switcher', class: ViewSwitcher},
   {tag: 'theme-gallery', class: ThemeGallery},
   {tag: 'datasets-list', class: DatasetsList, usesDatasets: true},
+  {tag: 'challenges-filter', class: ChallengesFilter, usesDatasets: true},
   {tag: 'categories-filter', class: CategoriesFilter, usesDatasets: true},
   {tag: 'organizations-filter', class: OrganizationsFilter, usesDatasets: true}
 ]
