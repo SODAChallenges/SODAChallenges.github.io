@@ -7,6 +7,38 @@ permalink: /challenges/
 
 <a href="{{ site.baseurl }}/add-organization/" class="btn btn-default pull-right admin-only" data-hook="add-organization-btn"><i class="fa fa-plus"></i> Add Organization</a>
 
+<!--
+绿
+up: 9DBC4C
+down: 529C52
+
+蓝
+up: 53AADB
+down: 2C77B6
+
+橙
+up: EFAE59
+down: DC6746
+
+红
+up: CC4365
+down: 9C3C5E
+
+
+-->
+<div class="challenge-box">
+  <a href="#" style="text-decoration: none;">
+  <div style="height: 90px; background-color: #9DBC4C; padding: 1px 10px;">
+    <h5 class="challenge-card-title">如何推动企业更诚信、有社会责任的运作？</h5>
+  </div></a>
+  <a href="#">
+  <div style="height: 80px; background-color: #529C52; margin-top: -1px; padding: 1px 10px;">
+    <h6 class="challenge-card-description">¥10,0000奖金</h6>
+    <p class="challenge-card-description">期望更多学者与实践家们参与企业社会责任的研究与实践， 进而使企业在...</p>
+  </div>
+  </a>
+</div>
+
 {% for challenge in site.challenges %}
   {% assign dataset_count = site.datasets | where:"challenge", challenge.title | size %}
   <div class="media">
