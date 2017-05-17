@@ -9,18 +9,18 @@ permalink: /challenges/
 
 
 
-<div class="media">
+<div class="span12 btn-icon-pg" style="padding-left: 8%;">
   <ul>
   {% for challenge in site.challenges %}
   <li>
     <div class="challenge-box">
       <a href="{{ site.baseurl }}{{ challenge.url }}" style="text-decoration: none;">
         <div class="challenge-box-top-half {{ challenge.title | append:'-top-half' }} ">
-          <h5 class="challenge-card-title">如何推动企业更诚信、有社会责任的运作？</h5>
+          <h5 class="challenge-card-title">{{ challenge.name }} </h5>
         </div>
         <div class="challenge-box-bot-half {{ challenge.title | append:'-bot-half' }}">
           <h6 class="challenge-card-description">{{ challenge.prize | append: " 奖金" | prepend: "¥"}}</h6>
-          <p class="challenge-card-description">{{ challenge.description | truncate: 20 }}</p>
+          <p class="challenge-card-description">{{ challenge.description | truncate: 40 }}</p>
         </div>
       </a>
     </div>

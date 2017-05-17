@@ -1461,10 +1461,7 @@ form {
 	padding: 5px 4px 2px;
 }
 }
- @media (min-width: 481px) and (max-width: 970px) {
-body {
-	background:#49CCED
-}
+
 #header h1 {
 	top:10px; left:35px;
 }
