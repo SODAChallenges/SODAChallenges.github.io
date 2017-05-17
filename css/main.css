@@ -188,6 +188,41 @@ dataset {
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+.challenge-box-top-half {
+  height: 90px; padding: 1px 10px;
+}
+.challenge-box-bot-half {
+  height: 80px; margin-top: -1px; padding: 1px 10px;
+}
+
+.green-development-top-half {
+  background-color: #9DBC4C;
+}
+.green-development-bot-half {
+  background-color: #529C52; 
+}
+
+.future-business-top-half {
+  background-color: #CC4365;
+}
+.future-business-bot-half {
+  background-color: #9C3C5E;
+}
+
+.smart-traffic-top-half {
+  background-color: #53AADB;
+}
+.smart-traffic-bot-half {
+  background-color: #2C77B6;
+}
+
+.medical-health-top-half {
+  background-color: #EFAE59;
+}
+.medical-health-bot-half {
+  background-color: #DC6746;
+}
+
 .challenge-box::after {
   content: "";
   border-radius: 5px;
