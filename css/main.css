@@ -247,3 +247,24 @@ dataset {
 .challenge-box:hover::after {
     opacity: 1;
 }
+
+
+.qa {
+  border-bottom: 1px solid #EEE;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #EEE;
+  padding: 3px 8px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.img-rounded {
+  border-radius: 5px;
+}
