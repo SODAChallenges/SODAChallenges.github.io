@@ -7,18 +7,22 @@ permalink: /projects/
 
 <a href="{{ site.baseurl }}/add-organization/" class="btn btn-default pull-right admin-only" data-hook="add-organization-btn"><i class="fa fa-plus"></i> Add Organization</a>
 
-{% for project in site.projects %}
-  <div class="media">
-    <div class="media-left">
-      {% if project.logo and project.logo != empty %}
-        <a href="{{ site.baseurl }}{{ project.url }}" class="organization-thumbnail">
-          <img class="media-object" src="{{ project.logo }}" alt="{{ project.title }}">
-        </a>
-      {% endif %}
+<div class="btn-icon-pg" style="padding-left: 8%;">
+  <ul>
+  {% for project in site.projects %}
+  <li style="margin: 15px 10px;">
+    <div class="challenge-box" style="overflow: visible; height: 300px; width: 280px;">
+      <a href="{{ site.baseurl }}{{ project.url }}" style="text-decoration: none;">
+        <div class="challenge-box-top-half" style="height: 200px;">
+            <img src="{{ site.baseurl }}{{ project.logo }}" width="265" height="199" style="margin-top: 0px;">
+        </div>
+        <div class="challenge-box-bot-half {{ project.challenge_category | append:'-bot-half' }}" style="height: 100px;">
+          <h6 class="challenge-card-description" style="font-size: 16px; line-height: 20px;">{{ project.name }}</h6>
+          <p class="challenge-card-description" style="font-size: 16px; line-height: 20px;">{{ project.title }}</p>
+        </div>
+      </a>
     </div>
-    <div class="media-body">
-      <h4 class="media-heading"><a href="{{ site.baseurl }}{{ project.url }}">{{ project.name }}</a></h4>
-      <p>{{ project.description }}</p>
-    </div>
-  </div>
-{% endfor %}
+  </li>
+  {% endfor %}
+  </ul>
+</div>
