@@ -5,7 +5,36 @@ permalink: /challenges/
 ---
 {% include breadcrumbs.html %}
 
-<div class="btn-icon-pg" style="padding-left: 8%;">
+  
+<div class="btn-icon-pg" style="padding-left: 8%; padding-right: 7%;">
+  <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #EEE;">
+    <form>
+    <div class="form-group">
+    <div style="display: inline-block; min-width: 350px;">
+      <label style="font-size: 16px; padding-top: 5px;">筛选版块: </label>
+      <select class="form-control" style="width: 20%; min-width: 180px; display: inline-block; margin-left: 2%;">
+        <option>不限</option>
+        <option>未来商业</option>
+        <option>智慧交通</option>
+        <option>绿色发展</option>
+        <option>医疗健康</option>
+      </select>
+    </div>
+
+    <div style="display: inline-block; min-width: 350px;">
+      <label style="font-size: 16px; margin-left: 5%; padding-top: 5px;">筛选时间: </label>
+      <select class="form-control" style="width: 20%; min-width: 180px; display: inline-block; margin-left: 2%;">
+        <option>不限</option>
+        <option>2017</option>
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+      </select>
+      </div>
+    </div>
+  </form>
+  </div>
+
   <ul>
   {% for challenge in site.challenges %}
   <li style="margin: 15px 5px;">
