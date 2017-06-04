@@ -1,0 +1,17 @@
+---
+---
+[
+	{% for challenge in site.challenges %}
+  	{
+    	"title": {{ challenge.title | jsonify }},
+    	"name": {{ challenge.name | jsonify }},
+    	"description": {{ challenge.description | jsonify }},
+    	"prize": {{ challenge.prize | jsonify }},
+      "challenge_category_logo": {{ challenge.challenge_category_logo | jsonify }},
+      "challenge_org_logo": {{ challenge.challenge_org_logo | jsonify }},
+    	"challenge_category": {{ challenge.challenge_category | jsonify }},
+    	"url": "{{ site.baseurl }}{{ challenge.url }}"
+  	}
+  	{% unless forloop.last %},{% endunless %}
+  	{% endfor %}
+]
