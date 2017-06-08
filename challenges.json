@@ -7,6 +7,7 @@
     	"name": {{ challenge.name | jsonify }},
     	"description": {{ challenge.description | jsonify }},
     	"prize": {{ challenge.prize | jsonify }},
+      "year": {{ challenge.year | jsonify }},
       "challenge_category_logo": {{ challenge.challenge_category_logo | jsonify }},
       "challenge_org_logo": {{ challenge.challenge_org_logo | jsonify }},
     	"challenge_category": {{ challenge.challenge_category | jsonify }},

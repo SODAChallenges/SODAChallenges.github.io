@@ -13,7 +13,7 @@ permalink: /challenges/
     <div style="display: inline-block; min-width: 350px;">
       <label style="font-size: 16px; padding-top: 5px;">筛选版块: </label>
       <select id="challenge-select" onchange="selectChange()" class="form-control" style="width: 20%; min-width: 180px; display: inline-block; margin-left: 2%;">
-        <option value="all" name="all">不限</option>
+        <option value="all">不限</option>
         <option value="future-business">未来商业</option>
         <option value="smart-traffic">智慧交通</option>
         <option value="green-development">绿色发展</option>
@@ -41,21 +41,36 @@ permalink: /challenges/
       var sel_challenge = document.getElementById("challenge-select");
       var opt_challenge_value = sel_challenge.options[sel_challenge.selectedIndex].value;
 
+      var sel_year = document.getElementById("year-select");
+      var opt_year_value = sel_year.options[sel_year.selectedIndex].value;      
+
       $("#challenges-list").html("");
 
       $.getJSON(`${settings.BASE_URL}/challenges.json`, function(data){
         var content = "<ul>";
         $.each(data, function(i, item){
-          if (opt_challenge_value == "all") {
-            var overall_box = "<li style=\"margin: 15px 5px;\"><div class=\"challenge-box\" style=\"overflow: visible;\"><a href=\"" + item.url + "\" style=\"text-decoration: none;\">";
-            var up_box = "<div class=\"challenge-box-top-half " + item.title + "-top-half\"><h5 class=\"challenge-card-title\">" + item.name + " </h5></div>";
-            var down_box = "<div class=\"challenge-box-bot-half " + item.title + "-bot-half\"><h6 class=\"challenge-card-description\"> ¥" + item.prize + "奖金</h6><p class=\"challenge-card-description\">" + item.description.substring(0,30) + "</p></div></a></div></li>";
-            content = content + overall_box + up_box + down_box;
-          }else if(item.title == opt_challenge_value){
-            var overall_box = "<li style=\"margin: 15px 5px;\"><div class=\"challenge-box\" style=\"overflow: visible;\"><a href=\"" + item.url + "\" style=\"text-decoration: none;\">";
-            var up_box = "<div class=\"challenge-box-top-half " + item.title + "-top-half\"><h5 class=\"challenge-card-title\">" + item.name + " </h5></div>";
-            var down_box = "<div class=\"challenge-box-bot-half " + item.title + "-bot-half\"><h6 class=\"challenge-card-description\"> ¥" + item.prize + "奖金</h6><p class=\"challenge-card-description\">" + item.description.substring(0,30) + "</p></div></a></div></li>";
-            content = content + overall_box + up_box + down_box;
+          var overall_box = "<li style=\"margin: 15px 5px;\"><div class=\"challenge-box\" style=\"overflow: visible;\"><a href=\"" + item.url + "\" style=\"text-decoration: none;\">";
+          var up_box = "<div class=\"challenge-box-top-half " + item.title + "-top-half\"><h5 class=\"challenge-card-title\">" + item.name + " </h5></div>";
+          var down_box = "<div class=\"challenge-box-bot-half " + item.title + "-bot-half\"><h6 class=\"challenge-card-description\"> ¥" + item.prize + "奖金</h6><p class=\"challenge-card-description\">" + item.description.substring(0,30) + "</p></div></a></div></li>";
+          if (opt_challenge_value == "all" || opt_year_value == "all") {
+            // 至少一个选择了不限
+            if (opt_challenge_value != "all") {
+              if (item.title == opt_challenge_value) {
+                content = content + overall_box + up_box + down_box;
+              }
+            }else if(opt_year_value != "all") {
+              if (item.year == opt_year_value) {
+                content = content + overall_box + up_box + down_box;
+              }
+            }else {
+              content = content + overall_box + up_box + down_box;
+            }
+            
+          }else{
+            // 均有筛选，根据筛选结果展示
+            if (item.title == opt_challenge_value && item.year == opt_year_value) {
+              content = content + overall_box + up_box + down_box;
+            }
           }
         });
         content += "</ul>";
