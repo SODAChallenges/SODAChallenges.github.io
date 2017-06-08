@@ -1,0 +1,18 @@
+---
+---
+[
+	{% for project in site.projects %}
+  	{
+    	"title": {{ project.title | jsonify }},
+    	"name": {{ project.name | jsonify }},
+    	"description": {{ project.description | jsonify }},
+    	"award": {{ project.award | jsonify }},
+      "year": {{ project.year | jsonify }},
+      "challenge_name": {{ project.challenge_name | jsonify }},
+    	"challenge_category": {{ project.challenge_category | jsonify }},
+      "logo": {{ project.logo | jsonify }},
+    	"url": "{{ site.baseurl }}{{ project.url }}"
+  	}
+  	{% unless forloop.last %},{% endunless %}
+  	{% endfor %}
+]
