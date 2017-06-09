@@ -12,7 +12,7 @@ permalink: /challenges/
     <div class="form-group">
     <div style="display: inline-block; min-width: 350px;">
       <label style="font-size: 16px; padding-top: 5px;">筛选版块: </label>
-      <select id="challenge-select" onchange="selectChange()" class="form-control" style="width: 20%; min-width: 180px; display: inline-block; margin-left: 2%;">
+      <select id="challenge-select" onchange="select_change()" class="form-control" style="width: 20%; min-width: 180px; display: inline-block; margin-left: 2%;">
         <option value="all">不限</option>
         <option value="future-business">未来商业</option>
         <option value="smart-traffic">智慧交通</option>
@@ -22,8 +22,8 @@ permalink: /challenges/
     </div>
 
     <div style="display: inline-block; min-width: 350px;">
-      <label style="font-size: 16px; margin-left: 5%; padding-top: 5px;">筛选时间: </label>
-      <select id="year-select" onchange="selectChange()" class="form-control" style="width: 20%; min-width: 180px; display: inline-block; margin-left: 2%;">
+      <label style="font-size: 16px; padding-top: 5px;">筛选时间: </label>
+      <select id="year-select" onchange="select_change()" class="form-control" style="width: 20%; min-width: 180px; display: inline-block; margin-left: 2%;">
         <option value="all">不限</option>
         <option value="2017">2017</option>
         <option value="2016">2016</option>
@@ -67,29 +67,29 @@ permalink: /challenges/
 </div>
 
  <script type="text/javascript">
-    function filter_match_chlg(sel_filter, para){
+    function filter_match(sel_filter, para){
       if (sel_filter == "all" || para == sel_filter) {
         return true;
       }
       return false;
     }
 
-    function selectChange(){
-      var sel_challenge = document.getElementById("challenge-select");
-      var opt_challenge_value = sel_challenge.options[sel_challenge.selectedIndex].value;
+    function select_change(){
+      let sel_challenge = document.getElementById("challenge-select");
+      let opt_challenge_value = sel_challenge.options[sel_challenge.selectedIndex].value;
 
-      var sel_year = document.getElementById("year-select");
-      var opt_year_value = sel_year.options[sel_year.selectedIndex].value;      
+      let sel_year = document.getElementById("year-select");
+      let opt_year_value = sel_year.options[sel_year.selectedIndex].value;      
 
       $("#challenges-list").html("");
 
       $.getJSON(`${settings.BASE_URL}/challenges.json`, function(data){
-        var content = "<ul>";
+        let content = "<ul>";
         $.each(data, function(i, item){
-          var overall_box = "<li style=\"margin: 15px 5px;\"><div class=\"challenge-box\" style=\"overflow: visible;\"><a href=\"" + item.url + "\" style=\"text-decoration: none;\">";
-          var up_box = "<div class=\"challenge-box-top-half " + item.title + "-top-half\"><h5 class=\"challenge-card-title\">" + item.name + " </h5></div>";
-          var down_box = "<div class=\"challenge-box-bot-half " + item.title + "-bot-half\"><h6 class=\"challenge-card-description\"> ¥" + item.prize + "奖金</h6><p class=\"challenge-card-description\">" + item.description.substring(0,30) + "</p></div></a></div></li>";
-          if (filter_match_chlg(opt_challenge_value, item.title) && filter_match_chlg(opt_year_value, item.year)) {
+          let overall_box = "<li style=\"margin: 15px 5px;\"><div class=\"challenge-box\" style=\"overflow: visible;\"><a href=\"" + item.url + "\" style=\"text-decoration: none;\">";
+          let up_box = "<div class=\"challenge-box-top-half " + item.title + "-top-half\"><h5 class=\"challenge-card-title\">" + item.name + " </h5></div>";
+          let down_box = "<div class=\"challenge-box-bot-half " + item.title + "-bot-half\"><h6 class=\"challenge-card-description\"> ¥" + item.prize + "奖金</h6><p class=\"challenge-card-description\">" + item.description.substring(0,30) + "</p></div></a></div></li>";
+          if (filter_match(opt_challenge_value, item.title) && filter_match(opt_year_value, item.year)) {
             content = content + overall_box + up_box + down_box;
           }
         });

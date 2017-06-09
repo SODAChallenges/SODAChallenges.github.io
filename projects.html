@@ -68,7 +68,7 @@ permalink: /projects/
 
 
   <script type="text/javascript">
-    function filter_match_pjt(sel_filter, para){
+    function filter_match(sel_filter, para){
       if (sel_filter == "all" || para == sel_filter) {
         return true;
       }
@@ -76,23 +76,23 @@ permalink: /projects/
     }
 
     function select_change(){
-      var sel_challenge = document.getElementById("project-challenge-select");
-      var opt_challenge_value = sel_challenge.options[sel_challenge.selectedIndex].value;
+      let sel_challenge = document.getElementById("project-challenge-select");
+      let opt_challenge_value = sel_challenge.options[sel_challenge.selectedIndex].value;
 
-      var sel_year = document.getElementById("project-year-select");
-      var opt_year_value = sel_year.options[sel_year.selectedIndex].value;      
+      let sel_year = document.getElementById("project-year-select");
+      let opt_year_value = sel_year.options[sel_year.selectedIndex].value;      
 
-      var sel_award = document.getElementById("project-award-select");
-      var opt_award_value = sel_award.options[sel_award.selectedIndex].value; 
+      let sel_award = document.getElementById("project-award-select");
+      let opt_award_value = sel_award.options[sel_award.selectedIndex].value; 
 
       $("#projects-app-list").html("");
       $.getJSON(`${settings.BASE_URL}/projects.json`, function(data){
-        var content = "<ul>";
+        let content = "<ul>";
         $.each(data, function(i, item){
-          var overall_box = "<li style=\"margin: 15px 5px;\"><div class=\"challenge-box\" style=\"overflow: visible; height: 300px; width: 280px;\"><a href=\"" + item.url + "\" style=\"text-decoration: none;\">";
-          var up_box = "<div class=\"challenge-box-top-half\" style=\"height: 200px;\"><img src=\"" + item.logo + "\" width=\"265\" height=\"199\" style=\"margin-top: 0px;\"></div>";
-          var down_box = "<div class=\"challenge-box-bot-half " + item.challenge_category + "-bot-half\" style=\"height: 100px;\"><h6 class=\"challenge-card-description\" style=\"font-size: 16px; line-height: 20px;\">" + item.name + "</h6><p class=\"challenge-card-description\" style=\"font-size: 16px; line-height: 20px;\">" + item.title + "</p></div></a></div></li>";
-          if (filter_match_pjt(opt_challenge_value, item.challenge_category) && filter_match_pjt(opt_award_value, item.award) && filter_match_pjt(opt_year_value, item.year)) {
+          let overall_box = "<li style=\"margin: 15px 5px;\"><div class=\"challenge-box\" style=\"overflow: visible; height: 300px; width: 280px;\"><a href=\"" + item.url + "\" style=\"text-decoration: none;\">";
+          let up_box = "<div class=\"challenge-box-top-half\" style=\"height: 200px;\"><img src=\"" + item.logo + "\" width=\"265\" height=\"199\" style=\"margin-top: 0px;\"></div>";
+          let down_box = "<div class=\"challenge-box-bot-half " + item.challenge_category + "-bot-half\" style=\"height: 100px;\"><h6 class=\"challenge-card-description\" style=\"font-size: 16px; line-height: 20px;\">" + item.name + "</h6><p class=\"challenge-card-description\" style=\"font-size: 16px; line-height: 20px;\">" + item.title + "</p></div></a></div></li>";
+          if (filter_match(opt_challenge_value, item.challenge_category) && filter_match(opt_award_value, item.award) && filter_match(opt_year_value, item.year)) {
             content = content + overall_box + up_box + down_box;
           }
         });
