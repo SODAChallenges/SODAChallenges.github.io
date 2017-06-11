@@ -23,6 +23,7 @@ $(document).ready(function () {
     $('#qr-code-top').show();
     $('#qr-code-bottom').hide();
 
+    var topnav = $('#topNavBar').offset();
     var navpos = $('.navbar').offset();
     var qrcontainer = $('#fixed-qrcode-wrapper').offset();
     var about1pos = $('#about-1').offset();
@@ -173,6 +174,16 @@ $(document).ready(function () {
                 $('#qr-code-top').show();
                 $('#qr-code-bottom').hide();
             }
+        }
+
+        if(topnav) {
+             if ($(window).scrollTop() > topnav.top) {
+               $('#topNavBar').fadeOut();
+            }
+            else {
+               $('#topNavBar').fadeIn();
+            }
+
         }
 
 
