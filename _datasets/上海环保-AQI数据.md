@@ -1,7 +1,7 @@
 ---
 schema: default
 title: AQI数据
-organization: SH-Environment
+organization: 上海市环境保护局
 notes: 日期、时间、PM2.5指数、PM10指数、O3指数、SO2指数、NO2指数、 CO指数、AQI、质量评价、首要污染物
 resources:
   - name: Air Monitoring Stations CSV
