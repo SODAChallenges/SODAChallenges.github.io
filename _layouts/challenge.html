@@ -3,6 +3,7 @@ layout: default
 ---
 {% include breadcrumbs.html parent="Organizations" %}
 
+
 <div data-component="view-switcher">
   <div class="row" data-hook="view" data-view="display">
     <div class="col-sm-3">
@@ -13,15 +14,11 @@ layout: default
           <div class="widget-content">
             <div class="span12 btn-icon-pg">
               <ul>
+              {% for arrg in page.schedule %}
                 <li><h6 class="text-margin">
-                  <span class="icon"> <i class="icon-hand-right"></i> 创意提交  <code>7月15日</code>
-                </h6></li>
-                <li><h6 class="text-margin">
-                  <span class="icon"> <i class="icon-hand-right"></i> 原型提交  <code>9月15日</code>
-                </h6></li>
-                <li><h6 class="text-margin">
-                  <span class="icon"> <i class="icon-hand-right"></i> 提名揭晓  <code>10月9日</code>
-                </h6></li>            
+                  <span class="icon"> <i class="icon-hand-right"></i> {{ arrg.name }}  <code>{{ arrg.date }}</code>
+                </h6></li> 
+              {% endfor %}         
               </ul>
             </div>
           </div>
@@ -34,16 +31,13 @@ layout: default
           <div class="widget-content">
             <div class="span12 btn-icon-pg">
               <ul>
+              {% for pri in page.prize %}
                 <li><h6 class="text-margin">
-                  <span class="icon"> <i class="icon-star"></i> 一等奖  
-                  <span class="label label-bonus">10万元</span>
-                  <span class="label label-number">1名</span>
+                  <span class="icon"> <i class="icon-star"></i> {{ pri.title }}  
+                  <span class="label label-bonus">{{ pri.award }}元</span>
+                  <span class="label label-number">{{pri.count }}名</span>
                 </h6></li>  
-                <li><h6 class="text-margin">
-                  <span class="icon"> <i class="icon-star"></i> 提名奖  
-                  <span class="label label-bonus">4万元</span>
-                  <span class="label label-number">2名</span></li>  
-                </h6>
+              {% endfor %}
               </ul>
             </div>
           </div>
@@ -56,15 +50,9 @@ layout: default
           <div class="widget-content">
             <div class="span12 btn-icon-pg">
               <ul>
-                <li><a href="#" class="thumbnail institution-logo"><img src = "{{ site.baseurl }}/img/logo/test-logo.png" width="45" height="45" alt="图片显示不了" title="显示机构名称"> </a></li>
-                <li><a href="#" class="thumbnail institution-logo"><img src = "{{ site.baseurl }}/img/logo/test-logo.png" width="45" height="45" alt="图片显示不了" title="显示机构名称"> </a></li>
-                <li><a href="#" class="thumbnail institution-logo"><img src = "{{ site.baseurl }}/img/logo/test-logo.png" width="45" height="45" alt="图片显示不了" title="显示机构名称"> </a></li>
-                <li><a href="#" class="thumbnail institution-logo"><img src = "{{ site.baseurl }}/img/logo/test-logo.png" width="45" height="45" alt="图片显示不了" title="显示机构名称"> </a></li>
-                <li><a href="#" class="thumbnail institution-logo"><img src = "{{ site.baseurl }}/img/logo/test-logo.png" width="45" height="45" alt="图片显示不了" title="显示机构名称"> </a></li>
-                <li><a href="#" class="thumbnail institution-logo"><img src = "{{ site.baseurl }}/img/logo/test-logo.png" width="45" height="45" alt="图片显示不了" title="显示机构名称"> </a></li>
-                <li><a href="#" class="thumbnail institution-logo"><img src = "{{ site.baseurl }}/img/logo/test-logo.png" width="45" height="45" alt="图片显示不了" title="显示机构名称"> </a></li>
-                <li><a href="#" class="thumbnail institution-logo"><img src = "{{ site.baseurl }}/img/logo/test-logo.png" width="45" height="45" alt="图片显示不了" title="显示机构名称"> </a></li>
-                
+              {% for org in page.cop_organization %}
+                <li><a href="{{ site.baseurl }}/organizations/{{ org.name }}" class="thumbnail institution-logo"><img src = "{{ org.logo }}" width="45" height="45" alt="图片显示不了" title="{{ org.name }}"> </a></li>
+              {% endfor %}
               </ul>
             </div>
           </div>
@@ -90,56 +78,51 @@ layout: default
     </div>
     <div class="col-sm-9">
       <h1 class="challenges-title">
-        {{ page.name }}
+        {{ page.title }}
         <!--a href="?view=edit" class="pull-right btn btn-default admin-only">Edit</a-->
       </h1>
 
       <h2 class="challenges-sub-title">【所属板块】</h2>      
 
-      <p class="content-padding">未来商业</p>
+      <p class="content-padding"><strong>{{ page.challenge_category_chn }}</p></strong>
 
       <h2 class="challenges-sub-title">【问题描述】</h2>     
 
-      <p class="content-padding">描述内容</p>
+      <p class="content-padding">{{ page.description }}</p>
 
       <h2 class="challenges-sub-title">【问题目标】</h2>      
 
-      <ul class="content-padding">
-        <li><span property="dct:title">借助多源数据刻画、监督企业诚信与社会责任的履行
-</span></li>
-        <li><p property="dct:title">借由数据驱动创新的金融产品，将企业诚信和社会责任融入企业借贷、竞标、投资等环节中，进而鼓励和推动企业更有社会责任地开展商业行为
-</p></li>
+      <ul class="content-padding" style="margin-left: 2%;">
+        {% for goal in page.goals %}
+        <li><span property="dct:title">{{ goal }}</span></li>
+        {% endfor %}
       </ul>
 
       <h2 class="challenges-sub-title">【问题相关数据】</h2>
-      <ul class="content-padding">
+      <ul class="content-padding" style="margin-left: 2%;">
         <li><a href="{{ site.baseurl }}/datasets/上海公安-犯罪统计数据/" property='dcat:accessURL'><span property="dct:title">企业诚信平台数据</span></a></li>
         <li><a href="{{ site.baseurl }}/datasets/上海公安-犯罪统计数据/" property='dcat:accessURL'><span property="dct:title">12315投诉热线记录</span></a></li>
       </ul>
 
       <h2 class="challenges-sub-title">【问题相关解决方案】</h2>
-
+      
       <h2 class="challenges-sub-title">【参考文献、资料】</h2>
-
+      <ul class="content-padding" style="margin-left: 2%;">
+        {% for ref in page.references %}
+        <li><a href="{{ ref.link }}"><span property="dct:title">{{ ref.name }}</span></a></li>
+        {% endfor%}
+      </ul>
       <h2 class="challenges-sub-title">【指导专家】</h2>
       <div class="span12 btn-icon-pg content-padding" >
         <ul>
-          <li style="margin: 7px 15px;"><img src = "{{ site.baseurl }}/img/logo/test-mentor.png" width="180" alt="图片显示不了" title="显示导师名字"> 
-          <h4 style="color: #ff5e99">章三</h4>
-          <p class="challenges-mentor-intro">习总书记提及曾和路遥同住一个窑洞彻夜长谈，路遥1973年离开延川县，由此推算，两人在延川同住一个窑洞应该是在1970年至1973年之间。</p>
+          {% for mentor in page.mentors %}
+          <div class="challenge-box" style="display: inline-block; width: inherit; height: inherit; margin: 2px 5px;">
+          <li style="margin: 7px 15px;"><img src = "{{ mentor.photo }}" width="180" alt="图片显示不了" title="显示导师名字"> 
+          <h4 style="color: #ff5e99">{{ mentor.name }}</h4>
+          <p class="challenges-mentor-intro">{{ mentor.intro }}</p>
           </li>
-          <li style="margin: 7px 15px;"><img src = "{{ site.baseurl }}/img/logo/test-mentor.png" width="180" alt="图片显示不了" title="显示导师名字"> 
-          <h4 style="color: #ff5e99">章三</h4>
-          <p class="challenges-mentor-intro">习总书记提及曾和路遥同住一个窑洞彻夜长谈，路遥1973年离开延川县，由此推算，两人在延川同住一个窑洞应该是在1970年至1973年之间。</p>
-          </li>
-          <li style="margin: 7px 15px;"><img src = "{{ site.baseurl }}/img/logo/test-mentor.png" width="180" alt="图片显示不了" title="显示导师名字"> 
-          <h4 style="color: #ff5e99">章三</h4>
-          <p class="challenges-mentor-intro">习总书记提及曾和路遥同住一个窑洞彻夜长谈，路遥1973年离开延川县，由此推算，两人在延川同住一个窑洞应该是在1970年至1973年之间。</p>
-          </li>
-          <li style="margin: 7px 15px;"><img src = "{{ site.baseurl }}/img/logo/test-mentor.png" width="180" alt="图片显示不了" title="显示导师名字"> 
-          <h4 style="color: #ff5e99">章三</h4>
-          <p class="challenges-mentor-intro">习总书记提及曾和路遥同住一个窑洞彻夜长谈，路遥1973年离开延川县，由此推算，两人在延川同住一个窑洞应该是在1970年至1973年之间。</p>
-          </li>
+          </div>
+          {% endfor %}
         </ul>
       </div>
     </div>

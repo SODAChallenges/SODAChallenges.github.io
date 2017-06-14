@@ -4,13 +4,18 @@
 	{% for challenge in site.challenges %}
   	{
     	"title": {{ challenge.title | jsonify }},
-    	"name": {{ challenge.name | jsonify }},
     	"description": {{ challenge.description | jsonify }},
+      "goals": {{ challenge.goals | jsonify }},
+      "schedule": {{ challenge.schedule | jsonify }},
     	"prize": {{ challenge.prize | jsonify }},
       "year": {{ challenge.year | jsonify }},
+      "cop_organization": {{ challenge.cop_organization | jsonify }},
+      "mentors": {{ challenge.mentors | jsonify }},
+      "references": {{ challenge.references | jsonify }},
+      "challenge_category_chn": {{ challenge.challenge_category_chn | jsonify }},
+      "challenge_category_en": {{ challenge.challenge_category_en | jsonify }},     
       "challenge_category_logo": {{ challenge.challenge_category_logo | jsonify }},
       "challenge_org_logo": {{ challenge.challenge_org_logo | jsonify }},
-    	"challenge_category": {{ challenge.challenge_category | jsonify }},
     	"url": "{{ site.baseurl }}{{ challenge.url }}"
   	}
   	{% unless forloop.last %},{% endunless %}
