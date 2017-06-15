@@ -40,13 +40,21 @@ layout: default
 
       <h2 class="challenges-sub-title" style="font-size: 28px;">项目摘要</h2>      
 
-      <p class="content-padding">未来商业</p>
+      <p class="content-padding">{{ page.description }}</p>
 
       <h2 class="challenges-sub-title" style="font-size: 28px;">关联数据集</h2>     
-
-      <p class="content-padding">描述内容</p>
+      <ul>
+      {% for dataset in page.datasets %}
+        <li><a href="{{ site.baseurl }}{{ dataset.link }}" property='dcat:accessURL'><span property="dct:title">{{ dataset.name }}</span></a></li>
+      {% endfor %}
+      </ul>
 
       <h2 class="challenges-sub-title" style="font-size: 28px;">项目文档</h2>      
+      <ul>
+      {% for doc in page.docs %}
+        <li><a href="{{ site.baseurl }}{{ doc.file }}" property='dcat:accessURL'><span property="dct:title">{{ doc.name }}</span></a></li>
+      {% endfor %}
+      </ul>
 
       <div class="content-padding">
         <a href="#" class="tag" style="text-decoration: none;">环境保护</a>
