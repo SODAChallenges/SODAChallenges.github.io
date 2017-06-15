@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% include breadcrumbs.html parent="Datasets" %}
+{% include breadcrumbs.html parent="datasets" %}
 {% assign schema = page.schema | default: site.schema %}
 {% assign dataset_fields = site.data.schemas[schema].dataset_fields %}
 {% assign dataset_system_fields = "title|organization|notes|license" | split: "|" %}
@@ -73,34 +73,30 @@ layout: default
 
       <h2>相关城市问题</h2>
       <ul>
-      {% for challenge in page.challenges %}
-        <li><a href="{{ site.baseurl }}{{ challenge.link }}" property='dcat:accessURL'><span property="dct:title">{{ challenge.name }}</span></a></li>
-      {% endfor %}
+        <li><a href="{{ site.baseurl }}/challenges/城市交通事故/" property='dcat:accessURL'><span property="dct:title">数据能用来降低城市交通事故率吗?</span></a></li>
+        <li><a href="{{ site.baseurl }}/challenges/城市治安防控/" property='dcat:accessURL'><span property="dct:title">如何利用数据提高城市治安防控水平？</span></a></li>
+        <li><a href="{{ site.baseurl }}/challenges/数据治理环境/" property='dcat:accessURL'><span property="dct:title">透过数据能知环境，但是否能治理环境？</span></a></li>
       </ul>
 
-      {% for project in site.projects %}
-        {% for dataset in project.datasets %}
-          {% if dataset.name == page.title %}
-            <h2>解决方案</h2>
-            {% break %}
-          {% endif %}
-        {% endfor %}
-        {% break %}
-      {% endfor %}
-
+      <h2>解决方案</h2>
       <ul>
-      {% for project in site.projects %}
-        {% for dataset in project.datasets %}
-          {% if dataset.name == page.title %}
-            <li><a href="{{ site.baseurl }}{{ project.url }}" property='dcat:accessURL'><span property="dct:title">{{ project.title }}</span></a></li>
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
+        <li><a href="{{ site.baseurl }}/projects/事故定责app/" property='dcat:accessURL'><span property="dct:title">事故定责app</span></a></li>
+        <li><a href="{{ site.baseurl }}/projects/危险夜行app/" property='dcat:accessURL'><span property="dct:title">危险夜行app</span></a></li>
+        <li><a href="{{ site.baseurl }}/projects/安全你我app/" property='dcat:accessURL'><span property="dct:title">安全你我app</span></a></li>
       </ul>
 
       <h2>其他信息</h2>
       <table class="table table-striped dataset-details">
+        {% if page.license and page.license != empty %}
+          <tr>
+            <th>License</th>
+            <td>
+              <a property="dct:license" resource="{{ page.license }}" href="{{ page.license }}">
+                {{ site.data.licenses[page.license] }}
+              </a>
+            </td>
+          </tr>
+        {% endif %}
         {% for field in dataset_fields %}
           {% unless dataset_system_fields contains field.field_name %}
             {% assign value = page[field[field_name]] %}

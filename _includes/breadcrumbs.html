@@ -4,7 +4,7 @@
   {% else %}
     <li><a href="{{ site.baseurl }}/"><i class="fa fa-home" aria-label="Home"></i></a></li>
     {% if include.parent %}
-      {% assign parent = site.pages | where:"title",include.parent | first %}
+      {% assign parent = site.pages | where:"slug",include.parent | first %}
       {% if parent %}
         <li><a href="{{ site.baseurl }}{{ parent.url }}">{{ parent.title }}</a></li>
       {% endif %}
