@@ -123,12 +123,16 @@ layout: default
         {% endif %}
       {% endfor %}
       </ul>
+      {% if page.references and page.references | size > 0 %}
       <h2 class="challenges-sub-title">【参考文献、资料】</h2>
       <ul class="content-padding" style="margin-left: 2%;">
         {% for ref in page.references %}
         <li><a href="{{ ref.link }}"><span property="dct:title">{{ ref.name }}</span></a></li>
         {% endfor%}
       </ul>
+      {% endif %}
+
+      {% if page.mentors and page.mentors | size > 0 %}
       <h2 class="challenges-sub-title">【指导专家】</h2>
       <div class="span12 btn-icon-pg content-padding" >
         <ul>
@@ -142,6 +146,7 @@ layout: default
           {% endfor %}
         </ul>
       </div>
+      {% endif %}
     </div>
   </div>
 

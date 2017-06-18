@@ -70,13 +70,14 @@ layout: default
         {% endfor %}
       </ul>
 
-
+      {% if page.challenges and page.challenges | size > 0%}
       <h2>相关城市问题</h2>
       <ul>
       {% for challenge in page.challenges %}
         <li><a href="{{ site.baseurl }}{{ challenge.link }}" property='dcat:accessURL'><span property="dct:title">{{ challenge.name }}</span></a></li>
       {% endfor %}
       </ul>
+      {% endif %}
 
       {% for project in site.projects %}
         {% for dataset in project.datasets %}
