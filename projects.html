@@ -3,6 +3,9 @@ title: 解决方案
 layout: default
 permalink: /projects/
 slug: projects
+pagination: 
+  enabled: true
+  collection: projects
 ---
 {% include breadcrumbs.html %}
 
@@ -46,9 +49,9 @@ slug: projects
   </form>
   </div>
 
-  <div id="projects-app-list">
+  <div id="projects-app-list" style="min-height: 1000px;">
     <ul>
-    {% for project in site.projects %}
+    {% for project in paginator.posts %}
     <li style="margin: 15px 10px;">
       <div class="challenge-box" style="overflow: visible; height: 300px; width: 280px;">
         <a href="{{ site.baseurl }}{{ project.url }}" style="text-decoration: none;">
@@ -64,6 +67,42 @@ slug: projects
     </li>
     {% endfor %}
     </ul>
+    {% if paginator.page_trail %}
+    <ul style="text-align: center; list-style: none;">
+      {% if paginator.first_page %}
+      <li class="previous">
+          <a href="{{ paginator.first_page_path | prepend: site.baseurl | replace: '//', '/' }}">第一页</a>
+      </li>
+      {% endif %}
+
+      {% if paginator.previous_page %}
+      <li class="previous">
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; 上一页</a>
+      </li>
+      {% endif %}
+
+      {% if paginator.page_trail %}
+        {% for trail in paginator.page_trail %}
+          <li {% if page.url == trail.path %}class="selected"{% endif %}>
+              <a href="{{ trail.path | prepend: site.baseurl | replace: '//', '/' }}" title="{{trail.title}}">{{ trail.num }}</a>
+          </li>
+        {% endfor %}
+      {% endif %}
+
+      {% if paginator.next_page %}
+      <li class="next">
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页 &rarr;</a>
+      </li>
+      {% endif %}
+
+       {% if paginator.last_page %}
+      <li class="previous">
+          <a href="{{ paginator.last_page_path | prepend: site.baseurl | replace: '//', '/' }}">最后一页</a>
+      </li>
+      {% endif %}
+  </ul>
+  {% endif %}
+
   </div>
 </div>
 
