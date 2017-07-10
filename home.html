@@ -12,8 +12,8 @@ permalink: /home/
 
 <section class="news-recent">
   <div class="row pack">
-
-        {% for post in site.news offset 0 limit 3%}   
+        {% assign news_list = (site.news | sort:'date') | reverse %}
+        {% for post in news_list offset:0 limit:3 %}   
             <div class="col-md-4 card">
                  
                 <div class="panel panel-default">
