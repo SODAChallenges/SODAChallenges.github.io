@@ -1,5 +1,5 @@
 ---
-title: 城市问题
+title: 痛点议题
 layout: default
 permalink: /challenges/
 slug: challenges
@@ -42,22 +42,18 @@ slug: challenges
     <li style="margin: 15px 5px;">
       <div class="challenge-box" style="overflow: visible;">
         <a href="{{ site.baseurl }}{{ challenge.url }}" style="text-decoration: none;">
-          <div class="challenge-box-top-half {{ challenge.challenge_category_en | append:'-top-half' }} ">
+          <div class="challenge-box-top-half {{ challenge.challenge_class | append:'-top-half' }} ">
             <h5 class="challenge-card-title">{{ challenge.title }} </h5>
             <div class="btn-icon-pg" style="width: 205px; display: inline-block; margin-top: 0px;">
               <ul>
-                {% for org-logo in challenge.challenge_org_logo %}
-                <li style="min-width: 30px; margin: 2px;"><img src="{{ site.baseurl}}{{ org-logo }}" width="30"></li>
+                {% for org in challenge.challenge_org_feature %}
+                <li style="min-width: 100px; margin: 10px;"><img src="{{ site.baseurl}}{{ org }}" width="100"></li>
                 {% endfor %}
               </ul>
             </div>
-            <div style="width: 70px; display: inline-block; margin-top: 0px;">
-              <img src="{{ site.baseurl}}{{ challenge.challenge_category_logo }}" width="65" style="margin-top: 0px;">
-            </div>
           </div>
-          <div class="challenge-box-bot-half {{ challenge.challenge_category_en | append:'-bot-half' }}">
-            <h6 class="challenge-card-description">{{ challenge.prize[0].award | append: " 奖金" | prepend: "¥"}}</h6>
-            <p class="challenge-card-description">{{ challenge.description | truncate: 40 }}</p>
+          <div class="challenge-box-bot-half {{ challenge.challenge_class | append:'-bot-half' }}">
+            <p class="challenge-card-description">{{ challenge.description | truncate: 50 }}</p>
           </div>
         </a>
       </div>

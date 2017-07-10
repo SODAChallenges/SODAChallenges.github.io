@@ -1,5 +1,6 @@
 ---
 title: 危险夜行app
+slug: project-2
 team_name: 小队2
 
 team_members:

@@ -1,6 +1,6 @@
-title: SODA
-greeting: Welcome to SODA
-description: Shanghai Open Data Apps
+title: 苏打数据创新平台
+greeting: 苏打数据创新平台
+description: 苏打数据创新平台
 logo: /img/jkan.png
 
 # Site theme
@@ -15,29 +15,36 @@ schema: soda-data
 
 # Nav bar
 navigation:
-  - title: 城市问题
+  - title: 创新赛事
+    url: /competitions/  
+  - title: 痛点议题
     url: /challenges/
-  - title: 比赛数据
+  - title: 数据资源
     url: /datasets/
   - title: 解决方案
     url: /projects/
-  - title: 组织单位
-    url: /organizations/
+  - title: 观点资讯
+    url: /news/
+  - title: 关于我们
+    url: /about/
 
 # Collections
 collections:
   datasets:
     output: true
-    permalink: /datasets/:path/
+    permalink: /datasets/:slug/
   challenges:
     output: true
-    permalink: /challenges/:path/
+    permalink: /challenges/:slug/
   projects:
     output: true
     permalink: /projects/:path/
   organizations:
     output: true
     permalink: /organizations/:path/
+  news:
+    output: true
+    permalink: /news/:slug/
 
 # Collections (cont'd)
 defaults:

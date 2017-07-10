@@ -1,27 +1,39 @@
 ---
+title: 苏打数据创新平台
 layout: default
+permalink: /home/
 ---
 
 <div class="jumbotron">
-  <h1>{{ site.greeting }}</h1>
-  <p>
-    {{ site.description }}
-  </p>
-  <p><a class="btn btn-primary btn-lg" href="{{ site.baseurl }}/datasets" role="button">Start browsing</a></p>
+
 </div>
 
-<h3>Browse by Category</h3>
+<h3>观点资讯</h3>
 
-<div class="homepage-categories">
-{% for category in site.data.categories %}
-  {% if category.featured == true %}
-    {% capture logo_alt %}{{ category.name }}{% if category.logo_credit and category.logo_credit != empty %} logo by {{ category.logo_credit }}{% endif %}{% endcapture %}
-    <a href="{{ site.baseurl }}/datasets/?category={{ category.name | slugify }}" class="thumbnail" title="{{ logo_alt }}">
-      {% if category.logo and category.logo != empty %}
-        <img src="{{ site.baseurl }}{{ category.logo }}" alt="{{ logo_alt }}">
-      {% endif %}
-      {{ category.name }}
-    </a>
-  {% endif %}
-{% endfor %}
-</div>
+<section class="news-recent">
+  <div class="row pack">
+
+        {% for post in site.news offset 0 limit 3%}   
+            <div class="col-md-4 card">
+                 
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h3 class="panel-title pull-left">{{ post.title }}</h3>
+                  </div>
+                  {% if post.banner %}
+                  <img width="100%" height="200px" src="{{site.baseurl}}/img/news/{{post.banner}}" alt="{{post.title}}">
+                  {% else %}
+                  <img width="100%" src="{{site.baseurl}}/images/webjeda-logo-big.jpg" alt="{{site.title}}">
+                  {% endif %}
+                  <div class="panel-body">
+                  	<small> {{ post.description | strip_html | strip_newlines | truncate: 160 }}  </small>
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-primary btn-sm pull-right mt10">Read</a>
+                  </div>
+                </div>
+            </div>
+        
+        {% endfor %}
+
+    </div> 
+</section>
+

@@ -1,5 +1,6 @@
 ---
 title: 安全你我app
+slug: project-3
 team_name: 小队2
 
 team_members:

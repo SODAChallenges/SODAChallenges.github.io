@@ -1,5 +1,6 @@
 ---
 title: 事故定责app
+slug: project-1
 team_name: 小队1
 
 team_members:

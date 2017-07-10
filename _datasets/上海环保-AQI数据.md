@@ -1,32 +1,25 @@
 ---
 schema: default
-title: AQI数据
+title: 上海市空气质量数据
+slug: AQI
 organization: 上海市环境保护局
-notes: 日期、时间、PM2.5指数、PM10指数、O3指数、SO2指数、NO2指数、 CO指数、AQI、质量评价、首要污染物
+notes: 日期、时间、PM2.5指数、PM10指数、O3指数、SO2指数、NO2指数、 CO指数、AQI、质量评价、首要污染物、对健康影响情况、建议采取的措施
 resources:
-  - name: Air Monitoring Stations CSV
-    url: 'http://data.phl.opendata.arcgis.com/datasets/1839b35258604422b0b520cbb668df0d_0.csv'
-    format: csv
-  - name: Air Monitoring Stations Shapefile
-    url: 'http://data.phl.opendata.arcgis.com/datasets/1839b35258604422b0b520cbb668df0d_0.zip'
-    format: shp
-  - name: Air Monitoring Stations GeoService
-    url: 'https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/Air_Monitoring_Stations/FeatureServer/0/query'
+  - name: 上海市空气质量接口
+    url: 'http://www.datashanghai.gov.cn/query!queryGdsInterfaceInfoById.action?dataId=2c90e4f457d7548b0158758821c34486'
     format: api
+  - name: 上海市空气质量实时发布系统全市历史数据
+    url: 'http://www.semc.com.cn/aqi/home/DayData.aspx'
+    format: xls
 
-challenges:
-  - name: 如何推动企业更有社会责任的运作？
-    link: /challenges/如何推动企业更有社会责任的运作/
-  - name: 如何提升公共医疗服务？
-    link: /challenges/如何提升公共医疗服务/
-  - name: 如何提升航旅服务体验？
-    link: /challenges/如何提升航旅服务体验/
-    
-license: 'https://www.baidu.com'
+  
+license: 'http://www.datashanghai.gov.cn/home!toUseProvisions.action'
 challenge_category: 
   - 健康医疗
+  - 智慧交通
+  - 绿色发展
+  - 未来商业
 category:
-  - Environment
-maintainer: Tim Wisniewski
-maintainer_email: tim@timwis.com
+  - 已开放数据
+maintainer: 上海市环境保护局
 ---

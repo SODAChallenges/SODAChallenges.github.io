@@ -3,6 +3,7 @@
 [{% for dataset in site.datasets %}
   {
     "title": {{ dataset.title | jsonify }},
+    "slug": {{ dataset.slug | jsonify }},
     "organization": {{ dataset.organization | jsonify }}{% if dataset.notes != "" %},
     "notes": {{ dataset.notes | jsonify }}{% endif %}{% if dataset.challenge_category != "" %},
     "challenge_category": {{ dataset.challenge_category | jsonify }}{% endif %}{% if dataset.category != "" %},

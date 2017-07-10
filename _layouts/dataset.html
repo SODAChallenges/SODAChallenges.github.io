@@ -70,15 +70,28 @@ layout: default
         {% endfor %}
       </ul>
 
-      {% if page.challenges and page.challenges | size > 0%}
-      <h2>相关城市问题</h2>
-      <ul>
-      {% for challenge in page.challenges %}
-        <li><a href="{{ site.baseurl }}{{ challenge.link }}" property='dcat:accessURL'><span property="dct:title">{{ challenge.name }}</span></a></li>
-      {% endfor %}
-      </ul>
-      {% endif %}
 
+      {% for challenge in site.challenges %}
+        {% for dataset in challenge.datasets %}
+          {% if dataset == page.slug %}
+            <h2>痛点议题</h2>
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {% break %}
+      {% endfor %}
+
+      {% for challenge in site.challenges %}
+        {% for dataset in challenge.datasets %}
+          {% if dataset == page.slug %}
+            <li><a href="{{ site.baseurl }}{{ challenge.url }}" property='dcat:accessURL'><span property="dct:title">{{ challenge.title }}</span></a></li>   
+            {% break %}        
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+
+
+  
       {% for project in site.projects %}
         {% for dataset in project.datasets %}
           {% if dataset.name == page.title %}

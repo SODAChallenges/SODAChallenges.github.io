@@ -1,5 +1,6 @@
 ---
 title: 扫除污染app
+slug: project-4
 team_name: 小队2
 
 team_members:

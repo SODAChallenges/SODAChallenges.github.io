@@ -1,5 +1,6 @@
 ---
 title: 添加绿色app
+slug: project-5
 team_name: 小队2
 
 team_members:

@@ -15,7 +15,7 @@ layout: default
               <ul>
               {% for arrg in page.schedule %}
                 <li><h6 class="text-margin">
-                  <span class="icon"> <i class="icon-hand-right"></i> {{ arrg.name }}  <code>{{ arrg.date }}</code>
+                  <span class="icon"> <i class="icon-hand-right"></i> {{ arrg.name }} <br>  <code>{{ arrg.date }}</code> </span>
                 </h6></li> 
               {% endfor %}         
               </ul>
@@ -44,13 +44,13 @@ layout: default
 
       <div class="widget-box box-margin">
           <div class="widget-title"> <span class="icon"> <i class="icon-group"></i> </span>
-            <h5 style="font-size: 15px;"> 问题建设单位</h5>
+            <h5 style="font-size: 15px;"> 议题建设单位</h5>
           </div>
           <div class="widget-content">
             <div class="span12 btn-icon-pg">
               <ul>
-              {% for org in page.cop_organization %}
-                <li><a href="{{ site.baseurl }}/organizations/{{ org.name }}" class="thumbnail institution-logo"><img src = "{{ org.logo }}" width="45" height="45" alt="图片显示不了" title="{{ org.name }}"> </a></li>
+              {% for org in page.organizations %}
+                <li><a href="{{ site.baseurl }}/organizations/{{ org.name }}" class="thumbnail institution-logo"><img src = "{{ org.logo }}" width="80" height="80" alt="图片显示不了" title="{{ org.name }}"> </a></li>
               {% endfor %}
               </ul>
             </div>
@@ -83,7 +83,7 @@ layout: default
 
       <h2 class="challenges-sub-title">【所属板块】</h2>      
 
-      <p class="content-padding"><strong>{{ page.challenge_category_chn }}</p></strong>
+      <p class="content-padding"><strong>{{ page.challenge_category }}</p></strong>
 
       <h2 class="challenges-sub-title">【问题描述】</h2>     
 

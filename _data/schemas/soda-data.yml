@@ -4,6 +4,9 @@ dataset_fields:
   - field_name: title
     label: Title
     datajson: title
+  - field_name: slug
+    label: Slug
+    datajson: slug
   - field_name: organization
     label: Organization
     form_template: form/organization.html

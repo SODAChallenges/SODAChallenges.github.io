@@ -1,0 +1,34 @@
+---
+title: 观点资讯
+layout: default
+permalink: /news/
+slug: news
+---
+{% include breadcrumbs.html %}
+
+<section class="news-list">
+  <div class="row pack">
+        {% assign news_list = (site.news | sort:'date') | reverse %}
+        {% for post in  news_list %}   
+            <div class="col-md-4 card">
+                 
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h3 class="panel-title pull-left">{{ post.title }}</h3>
+                  </div>
+                  {% if post.banner %}
+                  <img width="100%" height="200px" src="{{site.baseurl}}/img/news/{{post.banner}}" alt="{{post.title}}">
+                  {% else %}
+                  <img width="100%" src="{{site.baseurl}}/images/webjeda-logo-big.jpg" alt="{{site.title}}">
+                  {% endif %}
+                  <div class="panel-body">
+                    <small> {{ post.description | strip_html | strip_newlines | truncate: 160 }}  </small>
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-primary btn-sm pull-right mt10">Read</a>
+                  </div>
+                </div>
+            </div>
+        
+        {% endfor %}
+
+    </div> 
+</section>
