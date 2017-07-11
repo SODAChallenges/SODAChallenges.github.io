@@ -108,6 +108,7 @@
 	/*border:1px solid #dadada*/;
 	min-width:50px;
 	cursor:pointer;
+	vertical-align: top
 }
 .btn-icon-pg ul li:hover i {
 	transition:0.3s;

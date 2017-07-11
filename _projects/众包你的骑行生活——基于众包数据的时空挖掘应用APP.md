@@ -1,6 +1,6 @@
 ---
-title: 安全你我app
-slug: project-3
+title: 众包你的骑行生活——基于众包数据的时空挖掘应用APP
+slug: project-2
 team_name: 小队2
 
 team_members:
@@ -16,9 +16,9 @@ team_members:
 
 team_description: 团队简介,团队简介,团队简介,团队简介,团队简介,团队简介.
 
-description: 日常生活中，如何有效的防范盗窃、扒手，保护个人安全？
-award: 3rd
-year: 2017
+description: 以优化城市“最后一公里”出行为导向，以解决自行车出行问题为目的，打造了O2O骑行APP应用服务——Riding！产品已完成原型开发。
+award: 2nd
+year: 2016
 
 datasets:
   - name: 派出所出警数据
@@ -33,6 +33,6 @@ docs:
     file: /files/开放数林_报告摘要.pdf
 
 challenge_name: 如何鼓励更多的绿色出行？
-challenge_category: smart-traffic
+challenge_category: green-development
 logo: /img/logo/test-project-logo.jpg
 ---

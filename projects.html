@@ -49,15 +49,14 @@ slug: projects
   <div id="projects-app-list">
     <ul>
     {% for project in site.projects %}
-    <li style="margin: 15px 10px;">
+    <li style="margin: 30px 10px;">
       <div class="challenge-box" style="overflow: visible; height: 300px; width: 280px;">
         <a href="{{ site.baseurl }}{{ project.url }}" style="text-decoration: none;">
           <div class="challenge-box-top-half" style="height: 200px;">
               <img src="{{ site.baseurl }}{{ project.logo }}" width="265" height="199" style="margin-top: 0px;">
           </div>
-          <div class="challenge-box-bot-half {{ project.challenge_category | append:'-bot-half' }}" style="height: 100px;">
+          <div class="challenge-box-bot-half {{ project.challenge_category | append:'-bot-half' }}" style="height: 120px;">
             <h6 class="challenge-card-description" style="font-size: 16px; line-height: 20px;">{{ project.title }}</h6>
-            <p class="challenge-card-description" style="font-size: 16px; line-height: 20px;">{{ project.description }}</p>
           </div>
         </a>
       </div>
@@ -90,9 +89,9 @@ slug: projects
       $.getJSON(`${settings.BASE_URL}/projects.json`, function(data){
         let content = "<ul>";
         $.each(data, function(i, item){
-          let overall_box = "<li style=\"margin: 15px 5px;\"><div class=\"challenge-box\" style=\"overflow: visible; height: 300px; width: 280px;\"><a href=\"" + item.url + "\" style=\"text-decoration: none;\">";
+          let overall_box = "<li style=\"margin: 30px 10px;\"><div class=\"challenge-box\" style=\"overflow: visible; height: 300px; width: 280px;\"><a href=\"" + item.url + "\" style=\"text-decoration: none;\">";
           let up_box = "<div class=\"challenge-box-top-half\" style=\"height: 200px;\"><img src=\"" + item.logo + "\" width=\"265\" height=\"199\" style=\"margin-top: 0px;\"></div>";
-          let down_box = "<div class=\"challenge-box-bot-half " + item.challenge_category + "-bot-half\" style=\"height: 100px;\"><h6 class=\"challenge-card-description\" style=\"font-size: 16px; line-height: 20px;\">" + item.name + "</h6><p class=\"challenge-card-description\" style=\"font-size: 16px; line-height: 20px;\">" + item.title + "</p></div></a></div></li>";
+          let down_box = "<div class=\"challenge-box-bot-half " + item.challenge_category + "-bot-half\" style=\"height: 100px;\"><p class=\"challenge-card-description\" style=\"font-size: 16px; line-height: 20px;\">" + item.title + "</p></div></a></div></li>";
           if (filter_match(opt_challenge_value, item.challenge_category) && filter_match(opt_award_value, item.award) && filter_match(opt_year_value, item.year)) {
             content = content + overall_box + up_box + down_box;
           }

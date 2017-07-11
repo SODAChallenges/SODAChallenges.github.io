@@ -1,7 +1,7 @@
 ---
-title: 添加绿色app
+title: 手机UBI引擎
 slug: project-5
-team_name: 小队2
+team_name: 保卫橙子
 
 team_members:
   - name: 名字1
@@ -16,7 +16,8 @@ team_members:
 
 team_description: 团队简介,团队简介,团队简介,团队简介,团队简介,团队简介.
 
-description: 如何最快捷有效地提高城市绿化水平呢？
+description: 为解决车险定价纬度过于单一的问题，通过收集用户驾驶数据（GPS、陀螺仪、加速度传感器），结合风险评价标准（城市道路交通指数、道路事故数据）、训练数据（强生出租车数据），完成个性化定价。目前产品原型已完成。
+
 award: 2nd
 year: 2017
 
