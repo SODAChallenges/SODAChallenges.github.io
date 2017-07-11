@@ -291,12 +291,28 @@ dataset {
 }
 
 
+/*!---------- MAIN SECTION ----------*/
+
+.main-wrapper {
+
+  min-height: 100%;
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -216px; 
+}
+
+.pusher{
+
+  height: 216px;
+}
+
 /*!---------- FOOTER ----------*/
 
 footer {
   padding: 96px 0;
   position: relative;
   overflow: hidden;
+  height: 216px;
 }
 
 footer {
