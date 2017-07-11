@@ -269,8 +269,21 @@ dataset {
   border-radius: 5px;
 }
 
-.jumbotron {
+
+@media (min-width: 601px) {
+  .jumbotron {
     background-image: url("../img/home/banner.jpg");
+  }
+}
+
+@media (max-width: 600px) {
+  .jumbotron {      
+     background-image: url("../img/home/banner-2.jpg");
+  }
+}
+
+
+.jumbotron {
     background-color: #17234E;
     margin-bottom: 0;
     background-repeat: no-repeat;
