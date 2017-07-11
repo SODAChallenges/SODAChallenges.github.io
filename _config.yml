@@ -2,6 +2,7 @@ title: 苏打数据创新平台
 greeting: 苏打数据创新平台
 description: 苏打数据创新平台
 logo: /img/jkan.png
+baseurl: http://sodachallenges.com
 
 # Site theme
 jkan_theme: Paper
