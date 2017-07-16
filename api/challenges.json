@@ -7,6 +7,8 @@
       "slug": {{ challenge.slug | jsonify }},
     	"description": {{ challenge.description | jsonify }},
       "challenge_category": {{ challenge.challenge_category | jsonify }},
+      "challenge_class": {{ challenge.challenge_class | jsonify }},
+      "challenge_org_feature": {{ challenge.challenge_org_feature | jsonify }},
       "goals": {{ challenge.goals | jsonify }},
     	"active_competition": {{ challenge.active_competition | jsonify }},
       "organizations": {{ challenge.organizations | jsonify }},

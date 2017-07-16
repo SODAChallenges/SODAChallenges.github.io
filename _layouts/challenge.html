@@ -100,8 +100,8 @@ layout: default
       <h2 class="challenges-sub-title">【问题相关数据】</h2>
       <ul class="content-padding" style="margin-left: 2%;">
       {% for dataset in site.datasets %}
-        {% for challenge in dataset.challenges %}
-          {% if challenge.name == page.title %}
+        {% for challenge_dataset in page.datasets %}
+          {% if challenge_dataset == dataset.slug %}
             <li><a href="{{ site.baseurl }}{{ dataset.url }}" property='dcat:accessURL'><span property="dct:title">{{ dataset.title }}</span></a></li>
             {% break %}
           {% endif %}

@@ -1,38 +1,24 @@
 ---
 title: 众包你的骑行生活——基于众包数据的时空挖掘应用APP
-slug: project-2
-team_name: 小队2
-
-team_members:
-  - name: 名字1
-    photo: /img/logo/test-member.png
-    school: 学校1
-  - name: 名字2
-    photo: /img/logo/test-member.png
-    school: 学校2
-  - name: 名字3
-    photo: /img/logo/test-member.png
-    school: 学校3
-
-team_description: 团队简介,团队简介,团队简介,团队简介,团队简介,团队简介.
-
+slug: soda-2015-gobiking
 description: 以优化城市“最后一公里”出行为导向，以解决自行车出行问题为目的，打造了O2O骑行APP应用服务——Riding！产品已完成原型开发。
-award: 2nd
-year: 2016
+challenge_category: smart-mobility
+logo: /img/projects/soda-2015-gobiking.png
+
+team_name: GoBiking
+team_description: 广州中山大学城市化研究院Gobiking团队
+competition: SODA
+award: 优秀奖
+year: 2015
 
 datasets:
-  - name: 派出所出警数据
-    link: /datasets/上海公安-派出所出警数据/
-  - name: 行政处罚数据
-    link: /datasets/上海公安-行政处罚/
+  - smart-card
+  - taxi-gps
 
 docs:
-  - name: 项目文档1.pdf
-    file: /files/开放数林_报告摘要.pdf
-  - name: 项目文档2.docx
-    file: /files/开放数林_报告摘要.pdf
+  - name: 路演视频
+    external: true
+    file: https://v.qq.com/x/page/q0174eec0ay.html
 
-challenge_name: 如何鼓励更多的绿色出行？
-challenge_category: green-development
-logo: /img/logo/test-project-logo.jpg
+
 ---

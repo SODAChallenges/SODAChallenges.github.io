@@ -70,17 +70,19 @@ layout: default
         {% endfor %}
       </ul>
 
-
+      {% assign ifTitle = false %}
       {% for challenge in site.challenges %}
         {% for dataset in challenge.datasets %}
           {% if dataset == page.slug %}
+            {% if ifTitle == false %}
             <h2>痛点议题</h2>
-            {% break %}
+            {% assign ifTitle = true %}
+            {% endif %}
           {% endif %}
         {% endfor %}
-        {% break %}
       {% endfor %}
 
+      <ul>
       {% for challenge in site.challenges %}
         {% for dataset in challenge.datasets %}
           {% if dataset == page.slug %}
@@ -89,23 +91,27 @@ layout: default
           {% endif %}
         {% endfor %}
       {% endfor %}
+      </ul>
 
+      
 
-  
+      {% assign ifTitle = false %}
+
       {% for project in site.projects %}
         {% for dataset in project.datasets %}
-          {% if dataset.name == page.title %}
+          {% if dataset == page.slug %}
+            {% if ifTitle == false %}
             <h2>解决方案</h2>
-            {% break %}
+            {% assign ifTitle = true %}
+            {% endif %}
           {% endif %}
         {% endfor %}
-        {% break %}
       {% endfor %}
 
       <ul>
       {% for project in site.projects %}
         {% for dataset in project.datasets %}
-          {% if dataset.name == page.title %}
+          {% if dataset == page.slug %}
             <li><a href="{{ site.baseurl }}{{ project.url }}" property='dcat:accessURL'><span property="dct:title">{{ project.title }}</span></a></li>
             {% break %}
           {% endif %}
