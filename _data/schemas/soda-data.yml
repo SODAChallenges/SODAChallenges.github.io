@@ -4,9 +4,6 @@ dataset_fields:
   - field_name: title
     label: Title
     datajson: title
-  - field_name: slug
-    label: Slug
-    datajson: slug
   - field_name: organization
     label: Organization
     form_template: form/organization.html
@@ -16,21 +13,17 @@ dataset_fields:
     form_template: form/textarea.html
     datajson: description
   - field_name: license
-    label: License
+    label: 授权协议
     form_template: form/license.html
+    display_template: display/license.html
     datajson: license
   - field_name: category
-    label: Category
+    label: 数据类型
     form_template: form/category.html
     display_template: display/category.html
     datajson: category
-  - field_name: challenge_category
-    label: Challenge Category
-    form_template: form/category.html
-    display_template: display/category.html
-    datajson: challenge_category
   - field_name: maintainer
-    label: Maintainer
+    label: 数据提供单位
     datajson: contactPoint.fn
   - field_name: maintainer_email
     label: Maintainer Email

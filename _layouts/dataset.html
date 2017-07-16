@@ -2,9 +2,9 @@
 layout: default
 ---
 {% include breadcrumbs.html parent="datasets" %}
-{% assign schema = page.schema | default: site.schema %}
+{% assign schema = site.schema %}
 {% assign dataset_fields = site.data.schemas[schema].dataset_fields %}
-{% assign dataset_system_fields = "title|organization|notes|license" | split: "|" %}
+{% assign dataset_fields_filter = "title|organization|notes" | split: "|" %}
 {% assign resource_fields = site.data.schemas[schema].resource_fields %}
 {% assign resource_system_fields = "name|url|format|description" | split: "|" %}
 
@@ -41,7 +41,7 @@ layout: default
       </h1>
       <p property="dct:description">{{ page.notes }}</p>
 
-      <h2>数据资源</h2>
+      <h2>资源文件</h2>
       <ul>
         {% for resource in page.resources %}
         <li data-hook="resource-item" property='dcat:distribution' typeof='dcat:Distribution'>
@@ -75,7 +75,7 @@ layout: default
         {% for dataset in challenge.datasets %}
           {% if dataset == page.slug %}
             {% if ifTitle == false %}
-            <h2>痛点议题</h2>
+            <h2>关联痛点议题</h2>
             {% assign ifTitle = true %}
             {% endif %}
           {% endif %}
@@ -101,7 +101,7 @@ layout: default
         {% for dataset in project.datasets %}
           {% if dataset == page.slug %}
             {% if ifTitle == false %}
-            <h2>解决方案</h2>
+            <h2>关联解决方案</h2>
             {% assign ifTitle = true %}
             {% endif %}
           {% endif %}
@@ -122,7 +122,7 @@ layout: default
       <h2>其他信息</h2>
       <table class="table table-striped dataset-details">
         {% for field in dataset_fields %}
-          {% unless dataset_system_fields contains field.field_name %}
+          {% unless dataset_fields_filter contains field.field_name %}
             {% assign value = page[field[field_name]] %}
             {% if value %}
               {% if field.display_template %}

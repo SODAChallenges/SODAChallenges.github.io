@@ -38,6 +38,9 @@ collections:
   challenges:
     output: true
     permalink: /challenges/:slug/
+  competitions:
+    output: true
+    permalink: /competitions/:slug/
   projects:
     output: true
     permalink: /projects/:slug/
