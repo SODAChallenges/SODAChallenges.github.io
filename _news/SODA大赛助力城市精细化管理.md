@@ -2,7 +2,7 @@
 layout: news
 title: SODA大赛助力城市精细化管理
 slug: soda-launch
-description: 7月6日上海静安国际大数据论坛上，2017年SODA大赛正式发布，国家三部委与上海市有关领导出席启动仪式
+description: 7月6日，2017年SODA大赛正式发布，国家三部委与上海市有关领导出席启动仪式
 competition: soda
 banner: soda-launch.jpg
 date: 2017-07-06
