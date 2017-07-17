@@ -77,11 +77,6 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-# Google Analytics
-google_analytics:
-  enabled: false
-  code: "UA-XXXXXX-1"
-
 # US Digital Analytics Program - https://analytics.usa.gov
 digital_analytics_program:
   enabled: false
@@ -116,3 +111,18 @@ exclude:
 
 # feature control
 hasTeamMember: false
+
+# Google Analytics
+google_analytics:
+  enabled: false
+  code: "UA-XXXXXX-1"
+
+# GrowingIO Analytics
+growingio_analytics:
+  enabled: true
+  code: '936200ccdcbbebfb'
+
+# Baidu Analytics
+baidu_analytics:
+  enabled: true
+  code: '1017fb2a8d8e8a74f19858c36dc59f45'

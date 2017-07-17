@@ -31,6 +31,16 @@
     {% include addons/google-analytics.html %}
   {% endif %}
 
+    {% if site.growingio_analytics.enabled == true %}
+    <!-- GrowingIO Analytics -->
+    {% include addons/growingio_analytics.html %}
+  {% endif %}
+
+    {% if site.baidu_analytics.enabled == true %}
+    <!-- Baidu Analytics -->
+    {% include addons/baidu_analytics.html %}
+  {% endif %}
+
   {% if site.hypothesis.enabled == true %}
     <!-- Hypothesis.io -->
     <script async defer src="//hypothes.is/embed.js"></script>
@@ -52,4 +62,7 @@
     PAGE_URL: {{ page.url | jsonify }}
   }
   </script>
+
+
+
 </head>
