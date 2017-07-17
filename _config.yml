@@ -120,7 +120,7 @@ google_analytics:
 # GrowingIO Analytics
 growingio_analytics:
   enabled: true
-  code: '936200ccdcbbebfb'
+  code: 'b010d696b65f21f7'
 
 # Baidu Analytics
 baidu_analytics:
