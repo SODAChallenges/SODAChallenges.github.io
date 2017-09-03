@@ -307,6 +307,13 @@ dataset {
 }
 
 
+
+.carousel-control {
+
+  background-image: none !important;
+}
+
+
 /*!---------- News SECTION ----------*/
 
 .news-img{
