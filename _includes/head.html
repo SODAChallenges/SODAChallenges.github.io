@@ -12,6 +12,8 @@
   <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image" content="{{ site.baseurl }}/img/favicon/favicon-32x32.png">
 
+  <meta name="google-site-verification" content="WNBNBEAdMwb397GEhT8_PzQPS3OSt2B07a9IFzyT4bI" />
+
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   {% assign theme_name = site.jkan_theme | default: 'Default' %}
   {% assign theme = site.data.themes | where:'name', theme_name | first %}
